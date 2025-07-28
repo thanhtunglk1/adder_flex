@@ -1,0 +1,68 @@
+xrun(64): 20.09-s001: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s001: Started on Jul 13, 2025 at 23:35:14 EDT
+xrun
+	+xm64bit
+	-sv
+	-f ../02_sim/flist.f
+		../00_src/adder_flex.sv
+		../01_tb/adder_flex_tb.sv
+	-timescale 1ns/1ns
+	+ntb_random_seed=automatic
+	+access+rcw
+
+   User defined plus("+") options:
+	+ntb_random_seed=automatic
+
+Recompiling... reason: file '../00_src/adder_flex.sv' is newer than expected.
+	expected: Sun Jul 13 23:35:02 2025
+	actual:   Sun Jul 13 23:35:12 2025
+file: ../00_src/adder_flex.sv
+	module worklib.adder_flex:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		adder_flex_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.adder_flex:sv <0x4d98d39c>
+			streams:  11, words:  3101
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 5       6
+		Registers:              28      31
+		Scalar wires:           16       -
+		Vectored wires:         19       -
+		Always blocks:           6       6
+		Initial blocks:          2       2
+		Cont. assignments:       7      10
+		Pseudo assignments:     20      15
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.adder_flex_tb:sv
+Loading snapshot worklib.adder_flex_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /opt/cadence/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> run
+PASS at time     20000: i_a=0000000000, i_b=0000000000, i_cin=0, o_s=0000000000, o_cout=0
+PASS at time     30000: i_a=0000000000, i_b=0000000000, i_cin=1, o_s=0000000001, o_cout=0
+PASS at time     40000: i_a=1111111111, i_b=1111111111, i_cin=0, o_s=1111111110, o_cout=1
+PASS at time     50000: i_a=1111111111, i_b=1111111111, i_cin=1, o_s=1111111111, o_cout=1
+PASS at time     60000: i_a=0100100100, i_b=1010000001, i_cin=1, o_s=1110100110, o_cout=0
+PASS at time     70000: i_a=1001100011, i_b=1100001101, i_cin=1, o_s=0101110001, o_cout=1
+PASS at time     80000: i_a=0001100101, i_b=1000010010, i_cin=1, o_s=1001111000, o_cout=0
+PASS at time     90000: i_a=0100001101, i_b=0101110110, i_cin=1, o_s=1010000100, o_cout=0
+PASS at time    100000: i_a=1111101101, i_b=1110001100, i_cin=1, o_s=1101111010, o_cout=1
+PASS at time    110000: i_a=0011000110, i_b=0011000101, i_cin=0, o_s=0110001011, o_cout=0
+PASS at time    120000: i_a=1111100101, i_b=1001110111, i_cin=0, o_s=1001011100, o_cout=1
+PASS at time    130000: i_a=1110001111, i_b=0111110010, i_cin=0, o_s=0110000001, o_cout=1
+PASS at time    140000: i_a=1011101000, i_b=1011000101, i_cin=0, o_s=0110101101, o_cout=1
+PASS at time    150000: i_a=0010111101, i_b=0000101101, i_cin=1, o_s=0011101011, o_cout=0
+PASS at time    160000: i_a=0000000001, i_b=1111111111, i_cin=0, o_s=0000000000, o_cout=1
+All tests passed!
+Simulation complete via $finish(1) at time 160 NS + 0
+../01_tb/adder_flex_tb.sv:116         $finish;
+xcelium> exit
+TOOL:	xrun(64)	20.09-s001: Exiting on Jul 13, 2025 at 23:35:14 EDT  (total: 00:00:00)
